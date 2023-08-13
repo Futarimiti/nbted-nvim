@@ -3,9 +3,9 @@
 local M = {}
 
 --- @type opt
-M.defaults = { auto_detect_nbt = true
-             , auto_encode = true
-             , enable_commands = true
+M.defaults = { auto_detect_nbt = false
+             , auto_encode = false
+             , enable_commands = false
              , backup_on_encode = true
              , verbose = true
              , nbted_command = 'nbted'
