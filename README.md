@@ -51,10 +51,10 @@ listed and explained below.
 | `auto_detect_nbt`  | bool                         | Auto detect NBT file upon entering a new buffer, and immediately turn to edit its human-readable translation. Uses `detect_nbt` if enabled.            |
 | `auto_encode`      | bool                         | Upon saving, auto encode human-readable text into NBT and write to the original NBT file. Will backup on the first time if enabled `backup_on_encode`. |
 | `enable_commands`  | bool                         | Create vim command `:NBT do_sth` as equivalent to `require('nbted-nvim').do_sth()`.                                                                    |
-| `backup_on_encode` | bool                         | **Highly recommend enable at the moment**. See `auto_encode`.                                                                                          |
+| `backup_on_encode` | bool                         | **Strongly recommend enable at the moment**. See `auto_encode`.                                                                                          |
 | `verbose`          | bool                         | Produce helpful (or long-winded) logs as you use the functionalities.                                                                                  |
 | `nbted_command`    | string                       | `path/to/your/nbted/executable`, or simply `nbted` if that's already on your PATH.                                                                     |
-| `detect_nbt`       | `'auto' \| filepath -> bool` | Used by `auto_detect_nbt`, determine if a file is a compressed NBT from its full filepath. Use `'auto'` to let me take a (poor) guess.                 |
+| `detect_nbt`       | `'auto' \| filepath -> bool` | Used by `auto_detect_nbt` to determine if a file is a compressed NBT from its full filepath. Use `'auto'` to let me take a (poor) guess.               |
 | `minecraft_dir`    | `'infer' \| filepath`        | Absolute filepath of Minecraft data directory, for example `%appdata%/.minecraft`. Use `'infer'` to infer it based on your OS.                         |
 
 Default configuration:
@@ -75,7 +75,7 @@ Default configuration:
 
 ### Decoding
 
-`nbt.decode()` or `:NBT decode` tries to read the current file, 
+`nbt.decode()` or `:NBT decode` tries to read the current file,
 assuming it is a compressed NBT,
 and decodes it into human-friendly syntax in a tempfile for you to edit.
 
@@ -85,7 +85,7 @@ After decoding, you can encode on the decoded tempfile
 to encode it back into compressed NBT format to save your edits
 via `nbt.encode()` or `:NBT encode`,
 which will not be available until you have previously decoded.
-The original NBT file will be overriden and a backup may or 
+The original NBT file will be overriden and a backup may or
 may not be created, according to your configuration.
 
 ### Automating
