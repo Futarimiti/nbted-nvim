@@ -1,0 +1,800 @@
+Gzip
+Compound ""
+	Compound "Data"
+		Int "WanderingTraderSpawnChance" 75
+		Double "BorderCenterZ" 0
+		Byte "Difficulty" 3
+		Long "BorderSizeLerpTime" 0
+		Byte "raining" 0
+		Long "Time" 215290
+		Int "GameType" 0
+		List "ServerBrands" String 1
+			"vanilla"
+		Double "BorderCenterX" 0
+		Double "BorderDamagePerBlock" 0.2
+		Double "BorderWarningBlocks" 5
+		Compound "WorldGenSettings"
+			Byte "bonus_chest" 0
+			Long "seed" 4701287650596999534
+			Byte "generate_features" 1
+			Compound "dimensions"
+				Compound "minecraft:overworld"
+					Compound "generator"
+						String "settings" "minecraft:overworld"
+						Compound "biome_source"
+							String "preset" "minecraft:overworld"
+							String "type" "minecraft:multi_noise"
+							End
+						String "type" "minecraft:noise"
+						End
+					String "type" "minecraft:overworld"
+					End
+				Compound "minecraft:the_nether"
+					Compound "generator"
+						String "settings" "minecraft:nether"
+						Compound "biome_source"
+							String "preset" "minecraft:nether"
+							String "type" "minecraft:multi_noise"
+							End
+						String "type" "minecraft:noise"
+						End
+					String "type" "minecraft:the_nether"
+					End
+				Compound "minecraft:the_end"
+					Compound "generator"
+						String "settings" "minecraft:end"
+						Compound "biome_source"
+							String "type" "minecraft:the_end"
+							End
+						String "type" "minecraft:noise"
+						End
+					String "type" "minecraft:the_end"
+					End
+				End
+			End
+		Compound "DragonFight"
+			Byte "NeedsStateScanning" 1
+			IntArray "Gateways" 20
+				1
+				2
+				8
+				14
+				7
+				18
+				3
+				11
+				19
+				13
+				15
+				0
+				12
+				5
+				9
+				10
+				6
+				16
+				4
+				17
+			Byte "DragonKilled" 0
+			Byte "PreviouslyKilled" 0
+			End
+		Double "BorderSizeLerpTarget" 59999968
+		Compound "Version"
+			Byte "Snapshot" 1
+			String "Series" "main"
+			Int "Id" 3569
+			String "Name" "23w32a"
+			End
+		Long "DayTime" 320523
+		Byte "initialized" 1
+		Byte "WasModded" 0
+		Byte "allowCommands" 1
+		Int "WanderingTraderSpawnDelay" 8400
+		Compound "CustomBossEvents"
+			End
+		Compound "GameRules"
+			String "doWardenSpawning" "true"
+			String "globalSoundEvents" "true"
+			String "tntExplosionDropDecay" "false"
+			String "doFireTick" "true"
+			String "maxCommandChainLength" "65536"
+			String "doVinesSpread" "true"
+			String "fireDamage" "true"
+			String "reducedDebugInfo" "false"
+			String "waterSourceConversion" "true"
+			String "disableElytraMovementCheck" "false"
+			String "lavaSourceConversion" "false"
+			String "announceAdvancements" "true"
+			String "drowningDamage" "true"
+			String "commandBlockOutput" "true"
+			String "forgiveDeadPlayers" "true"
+			String "doMobSpawning" "true"
+			String "maxEntityCramming" "24"
+			String "disableRaids" "false"
+			String "doWeatherCycle" "true"
+			String "mobExplosionDropDecay" "true"
+			String "doDaylightCycle" "true"
+			String "showDeathMessages" "true"
+			String "doTileDrops" "true"
+			String "universalAnger" "false"
+			String "playersSleepingPercentage" "100"
+			String "snowAccumulationHeight" "1"
+			String "doInsomnia" "true"
+			String "blockExplosionDropDecay" "true"
+			String "doImmediateRespawn" "false"
+			String "naturalRegeneration" "true"
+			String "doMobLoot" "true"
+			String "fallDamage" "true"
+			String "keepInventory" "false"
+			String "doEntityDrops" "true"
+			String "doLimitedCrafting" "false"
+			String "mobGriefing" "true"
+			String "randomTickSpeed" "3"
+			String "spawnRadius" "10"
+			String "commandModificationBlockLimit" "32768"
+			String "doTraderSpawning" "true"
+			String "freezeDamage" "true"
+			String "logAdminCommands" "true"
+			String "spectatorsGenerateChunks" "true"
+			String "sendCommandFeedback" "true"
+			String "doPatrolSpawning" "true"
+			End
+		Compound "Player"
+			Compound "Brain"
+				Compound "memories"
+					End
+				End
+			Int "HurtByTimestamp" 47672
+			Short "SleepTimer" 0
+			Byte "SpawnForced" 0
+			List "Attributes" Compound 5
+					Double "Base" 1
+					String "Name" "minecraft:generic.attack_damage"
+					End
+					Double "Base" 4
+					String "Name" "minecraft:generic.attack_speed"
+					End
+					Double "Base" 0
+					String "Name" "minecraft:generic.armor"
+					End
+					Double "Base" 0
+					String "Name" "minecraft:generic.armor_toughness"
+					End
+					Double "Base" 0.10000000149011612
+					String "Name" "minecraft:generic.movement_speed"
+					End
+			Byte "Invulnerable" 0
+			Byte "FallFlying" 0
+			Int "PortalCooldown" 0
+			Float "AbsorptionAmount" 0
+			Compound "abilities"
+				Byte "invulnerable" 0
+				Byte "mayfly" 0
+				Byte "instabuild" 0
+				Float "walkSpeed" 0.1
+				Byte "mayBuild" 0
+				Byte "flying" 0
+				Float "flySpeed" 0.05
+				End
+			Float "FallDistance" 0
+			Compound "recipeBook"
+				List "recipes" String 189
+					"minecraft:mangrove_boat"
+					"minecraft:bread"
+					"minecraft:chest"
+					"minecraft:wooden_pickaxe"
+					"minecraft:cherry_planks"
+					"minecraft:charcoal"
+					"minecraft:acacia_boat"
+					"minecraft:dark_oak_button"
+					"minecraft:baked_potato_from_campfire_cooking"
+					"minecraft:item_frame"
+					"minecraft:diamond_sword"
+					"minecraft:jungle_boat"
+					"minecraft:diamond_hoe"
+					"minecraft:white_banner"
+					"minecraft:loom"
+					"minecraft:oak_stairs"
+					"minecraft:sentry_armor_trim_smithing_template_smithing_trim"
+					"minecraft:dark_oak_fence"
+					"minecraft:diamond_leggings"
+					"minecraft:light_weighted_pressure_plate"
+					"minecraft:golden_shovel"
+					"minecraft:cooked_mutton_from_campfire_cooking"
+					"minecraft:dark_oak_boat"
+					"minecraft:wooden_axe"
+					"minecraft:lectern"
+					"minecraft:coast_armor_trim_smithing_template"
+					"minecraft:arrow"
+					"minecraft:golden_sword"
+					"minecraft:iron_door"
+					"minecraft:oak_fence_gate"
+					"minecraft:shield"
+					"minecraft:iron_nugget"
+					"minecraft:white_carpet"
+					"minecraft:iron_ingot_from_nuggets"
+					"minecraft:cooked_beef"
+					"minecraft:birch_fence"
+					"minecraft:golden_pickaxe"
+					"minecraft:bamboo_raft"
+					"minecraft:cooked_mutton_from_smoking"
+					"minecraft:cooked_porkchop_from_campfire_cooking"
+					"minecraft:dark_oak_chest_boat"
+					"minecraft:dark_oak_trapdoor"
+					"minecraft:chiseled_bookshelf"
+					"minecraft:gold_nugget_from_blasting"
+					"minecraft:mossy_cobblestone_from_moss_block"
+					"minecraft:painting"
+					"minecraft:iron_shovel"
+					"minecraft:ladder"
+					"minecraft:cooked_salmon_from_campfire_cooking"
+					"minecraft:tripwire_hook"
+					"minecraft:hopper"
+					"minecraft:chain"
+					"minecraft:moss_carpet"
+					"minecraft:crafting_table"
+					"minecraft:coast_armor_trim_smithing_template_smithing_trim"
+					"minecraft:lantern"
+					"minecraft:fishing_rod"
+					"minecraft:cooked_beef_from_smoking"
+					"minecraft:iron_leggings"
+					"minecraft:dark_oak_wood"
+					"minecraft:acacia_chest_boat"
+					"minecraft:gold_nugget_from_smelting"
+					"minecraft:oak_fence"
+					"minecraft:gold_nugget"
+					"minecraft:iron_bars"
+					"minecraft:iron_boots"
+					"minecraft:mossy_stone_bricks_from_moss_block"
+					"minecraft:diamond_boots"
+					"minecraft:iron_trapdoor"
+					"minecraft:coal_block"
+					"minecraft:cake"
+					"minecraft:diamond_chestplate"
+					"minecraft:golden_chestplate"
+					"minecraft:dark_oak_sign"
+					"minecraft:cooked_cod"
+					"minecraft:iron_helmet"
+					"minecraft:diamond_axe"
+					"minecraft:cherry_boat"
+					"minecraft:stick"
+					"minecraft:iron_nugget_from_smelting"
+					"minecraft:leather_chestplate"
+					"minecraft:birch_door"
+					"minecraft:oak_sign"
+					"minecraft:leather_boots"
+					"minecraft:dark_oak_stairs"
+					"minecraft:cartography_table"
+					"minecraft:iron_block"
+					"minecraft:birch_sign"
+					"minecraft:gold_ingot_from_nuggets"
+					"minecraft:dark_oak_door"
+					"minecraft:cooked_porkchop"
+					"minecraft:cooked_chicken"
+					"minecraft:oak_trapdoor"
+					"minecraft:cooked_salmon_from_smoking"
+					"minecraft:mushroom_stew"
+					"minecraft:leather_leggings"
+					"minecraft:birch_pressure_plate"
+					"minecraft:writable_book"
+					"minecraft:dark_oak_pressure_plate"
+					"minecraft:birch_wood"
+					"minecraft:oak_door"
+					"minecraft:cooked_porkchop_from_smoking"
+					"minecraft:leather_helmet"
+					"minecraft:oak_wood"
+					"minecraft:golden_apple"
+					"minecraft:emerald_block"
+					"minecraft:barrel"
+					"minecraft:birch_button"
+					"minecraft:diamond_pickaxe"
+					"minecraft:golden_carrot"
+					"minecraft:dried_kelp_from_campfire_cooking"
+					"minecraft:flint_and_steel"
+					"minecraft:wooden_sword"
+					"minecraft:oak_planks"
+					"minecraft:birch_fence_gate"
+					"minecraft:bone_meal"
+					"minecraft:cherry_chest_boat"
+					"minecraft:diamond_block"
+					"minecraft:iron_nugget_from_blasting"
+					"minecraft:jungle_chest_boat"
+					"minecraft:baked_potato_from_smoking"
+					"minecraft:iron_sword"
+					"minecraft:black_dye"
+					"minecraft:crossbow"
+					"minecraft:cooked_chicken_from_campfire_cooking"
+					"minecraft:carrot_on_a_stick"
+					"minecraft:iron_chestplate"
+					"minecraft:book"
+					"minecraft:bamboo_chest_raft"
+					"minecraft:iron_pickaxe"
+					"minecraft:wooden_shovel"
+					"minecraft:fletching_table"
+					"minecraft:baked_potato"
+					"minecraft:birch_stairs"
+					"minecraft:smithing_table"
+					"minecraft:cooked_salmon"
+					"minecraft:dried_kelp_from_smoking"
+					"minecraft:white_wool_from_string"
+					"minecraft:spruce_chest_boat"
+					"minecraft:cooked_mutton"
+					"minecraft:heavy_weighted_pressure_plate"
+					"minecraft:birch_planks"
+					"minecraft:bookshelf"
+					"minecraft:golden_leggings"
+					"minecraft:leather_horse_armor"
+					"minecraft:oak_chest_boat"
+					"minecraft:golden_axe"
+					"minecraft:dark_oak_planks"
+					"minecraft:lapis_block"
+					"minecraft:candle"
+					"minecraft:oak_button"
+					"minecraft:spruce_boat"
+					"minecraft:birch_boat"
+					"minecraft:gold_block"
+					"minecraft:wooden_hoe"
+					"minecraft:cooked_beef_from_campfire_cooking"
+					"minecraft:diamond_shovel"
+					"minecraft:cooked_chicken_from_smoking"
+					"minecraft:birch_chest_boat"
+					"minecraft:birch_trapdoor"
+					"minecraft:shears"
+					"minecraft:dried_kelp_from_smelting"
+					"minecraft:oak_pressure_plate"
+					"minecraft:campfire"
+					"minecraft:snow_block"
+					"minecraft:hay_block"
+					"minecraft:cherry_wood"
+					"minecraft:dark_oak_slab"
+					"minecraft:cooked_cod_from_campfire_cooking"
+					"minecraft:golden_boots"
+					"minecraft:iron_axe"
+					"minecraft:oak_slab"
+					"minecraft:jukebox"
+					"minecraft:white_bed"
+					"minecraft:mangrove_chest_boat"
+					"minecraft:birch_slab"
+					"minecraft:diamond_helmet"
+					"minecraft:iron_hoe"
+					"minecraft:cooked_cod_from_smoking"
+					"minecraft:bow"
+					"minecraft:golden_helmet"
+					"minecraft:snow"
+					"minecraft:minecart"
+					"minecraft:dark_oak_fence_gate"
+					"minecraft:oak_boat"
+					"minecraft:bucket"
+					"minecraft:blue_dye"
+					"minecraft:golden_hoe"
+					"minecraft:sentry_armor_trim_smithing_template"
+				Byte "isBlastingFurnaceFilteringCraftable" 0
+				Byte "isSmokerGuiOpen" 0
+				Byte "isFilteringCraftable" 0
+				List "toBeDisplayed" String 75
+					"minecraft:bread"
+					"minecraft:chest"
+					"minecraft:barrel"
+					"minecraft:birch_button"
+					"minecraft:diamond_pickaxe"
+					"minecraft:dried_kelp_from_campfire_cooking"
+					"minecraft:charcoal"
+					"minecraft:baked_potato_from_campfire_cooking"
+					"minecraft:diamond_sword"
+					"minecraft:diamond_hoe"
+					"minecraft:diamond_block"
+					"minecraft:iron_nugget_from_blasting"
+					"minecraft:oak_stairs"
+					"minecraft:sentry_armor_trim_smithing_template_smithing_trim"
+					"minecraft:baked_potato_from_smoking"
+					"minecraft:diamond_leggings"
+					"minecraft:cooked_mutton_from_campfire_cooking"
+					"minecraft:lectern"
+					"minecraft:cooked_chicken_from_campfire_cooking"
+					"minecraft:iron_door"
+					"minecraft:oak_fence_gate"
+					"minecraft:cooked_beef"
+					"minecraft:baked_potato"
+					"minecraft:cooked_mutton_from_smoking"
+					"minecraft:cooked_porkchop_from_campfire_cooking"
+					"minecraft:birch_stairs"
+					"minecraft:dark_oak_trapdoor"
+					"minecraft:cooked_salmon"
+					"minecraft:gold_nugget_from_blasting"
+					"minecraft:dried_kelp_from_smoking"
+					"minecraft:ladder"
+					"minecraft:cooked_salmon_from_campfire_cooking"
+					"minecraft:tripwire_hook"
+					"minecraft:hopper"
+					"minecraft:cooked_mutton"
+					"minecraft:chain"
+					"minecraft:coast_armor_trim_smithing_template_smithing_trim"
+					"minecraft:leather_horse_armor"
+					"minecraft:lantern"
+					"minecraft:cooked_beef_from_smoking"
+					"minecraft:gold_nugget_from_smelting"
+					"minecraft:oak_button"
+					"minecraft:oak_fence"
+					"minecraft:cooked_beef_from_campfire_cooking"
+					"minecraft:diamond_shovel"
+					"minecraft:cooked_chicken_from_smoking"
+					"minecraft:birch_trapdoor"
+					"minecraft:diamond_boots"
+					"minecraft:dried_kelp_from_smelting"
+					"minecraft:cake"
+					"minecraft:oak_pressure_plate"
+					"minecraft:diamond_chestplate"
+					"minecraft:cooked_cod_from_campfire_cooking"
+					"minecraft:dark_oak_sign"
+					"minecraft:cooked_cod"
+					"minecraft:diamond_axe"
+					"minecraft:iron_nugget_from_smelting"
+					"minecraft:birch_door"
+					"minecraft:oak_sign"
+					"minecraft:oak_slab"
+					"minecraft:jukebox"
+					"minecraft:birch_sign"
+					"minecraft:birch_slab"
+					"minecraft:diamond_helmet"
+					"minecraft:dark_oak_door"
+					"minecraft:cooked_cod_from_smoking"
+					"minecraft:cooked_porkchop"
+					"minecraft:cooked_chicken"
+					"minecraft:oak_trapdoor"
+					"minecraft:cooked_salmon_from_smoking"
+					"minecraft:minecart"
+					"minecraft:birch_pressure_plate"
+					"minecraft:bucket"
+					"minecraft:oak_door"
+					"minecraft:cooked_porkchop_from_smoking"
+				Byte "isFurnaceGuiOpen" 0
+				Byte "isGuiOpen" 1
+				Byte "isFurnaceFilteringCraftable" 0
+				Byte "isBlastingFurnaceGuiOpen" 0
+				Byte "isSmokerFilteringCraftable" 0
+				End
+			Short "DeathTime" 0
+			Int "XpSeed" 1130948651
+			Int "XpTotal" 422
+			IntArray "UUID" 4
+				-717172200
+				498549498
+				-1142992484
+				-692216742
+			Int "playerGameType" 2
+			String "SpawnDimension" "minecraft:overworld"
+			Byte "seenCredits" 0
+			List "Motion" Double 3
+				0
+				0
+				0
+			Compound "RootVehicle"
+				Compound "Entity"
+					List "Motion" Double 3
+						0
+						0
+						0
+					Float "FallDistance" 0
+					String "Type" "dark_oak"
+					List "Pos" Double 3
+						-751.7298910289854
+						62.52326431274414
+						2509.739525307832
+					Short "Fire" 0
+					Byte "Invulnerable" 0
+					String "id" "minecraft:boat"
+					Short "Air" 300
+					Byte "OnGround" 0
+					Int "PortalCooldown" 0
+					IntArray "UUID" 4
+						-569345370
+						-1119989897
+						-1389060380
+						418771939
+					List "Rotation" Float 2
+						130.90744
+						0
+					End
+				IntArray "Attach" 4
+					-569345370
+					-1119989897
+					-1389060380
+					418771939
+				End
+			Int "SpawnY" 85
+			Float "Health" 19
+			Int "SpawnZ" 2545
+			Float "foodSaturationLevel" 0
+			Int "SpawnX" -213
+			Short "Air" 300
+			Byte "OnGround" 0
+			String "Dimension" "minecraft:overworld"
+			Float "SpawnAngle" -176.63962
+			List "Rotation" Float 2
+				123.47432
+				23.415886
+			Int "XpLevel" 17
+			Compound "warden_spawn_tracker"
+				Int "warning_level" 0
+				Int "ticks_since_last_warning" 11222
+				Int "cooldown_ticks" 0
+				End
+			Int "Score" 422
+			List "Pos" Double 3
+				-751.7298910289854
+				62.11076428890228
+				2509.739525307832
+			Short "Fire" -20
+			Float "XpP" 0.5957448
+			List "EnderItems" End 0
+			Int "DataVersion" 3569
+			Int "foodLevel" 17
+			Float "foodExhaustionLevel" 1.113501
+			Short "HurtTime" 0
+			Int "SelectedItemSlot" 0
+			List "Inventory" Compound 36
+					Byte "Slot" 0
+					String "id" "minecraft:iron_axe"
+					Byte "Count" 1
+					Compound "tag"
+						Int "Damage" 51
+						End
+					End
+					Byte "Slot" 1
+					String "id" "minecraft:saddle"
+					Byte "Count" 1
+					End
+					Byte "Slot" 2
+					String "id" "minecraft:bread"
+					Byte "Count" 16
+					End
+					Byte "Slot" 3
+					String "id" "minecraft:golden_apple"
+					Byte "Count" 1
+					End
+					Byte "Slot" 4
+					String "id" "minecraft:crossbow"
+					Byte "Count" 1
+					Compound "tag"
+						List "ChargedProjectiles" Compound 1
+								String "id" "minecraft:arrow"
+								Byte "Count" 1
+								End
+						Int "Damage" 1
+						Byte "Charged" 1
+						End
+					End
+					Byte "Slot" 5
+					String "id" "minecraft:fishing_rod"
+					Byte "Count" 1
+					Compound "tag"
+						Int "Damage" 1
+						End
+					End
+					Byte "Slot" 6
+					String "id" "minecraft:golden_boots"
+					Byte "Count" 1
+					Compound "tag"
+						Int "Damage" 0
+						List "Enchantments" Compound 1
+								Short "lvl" 1
+								String "id" "minecraft:frost_walker"
+								End
+						End
+					End
+					Byte "Slot" 7
+					String "id" "minecraft:writable_book"
+					Byte "Count" 1
+					Compound "tag"
+						List "pages" String 3
+							"     == Villages ==
+1, 1442 -2437 savanna
+2. 896 -1340 plain
+3. -666 -328 snow, home, dying
+4. -1322 0 plain&snow, dying
+5. -1000 1000 plain
+6. -1444 780 savanna
+7. -200 2550 desert&mesa"
+							"== Pillager Outputs ==
+1. 204 -1732
+2. 598 -2313
+3. -300 1600"
+							"      == Igloos ==
+1, -764 -332"
+						End
+					End
+					Byte "Slot" 8
+					String "id" "minecraft:writable_book"
+					Byte "Count" 1
+					Compound "tag"
+						List "pages" String 3
+							" == Crafting tables ==
+P1
+P2
+I1"
+							"    == Furnaces ==
+V1 (smoker)
+V3 (reg, blast)
+I1
+V5 reg
+V7 reg"
+							"  == Trade blocks ==
+V1 grind cook graph
+V2 farm
+V3 leath farm arm fish mason
+V4 farm
+V5 fletch grind farm lib
+V6 grind graph lib brew
+V7 grind lib farm"
+						End
+					End
+					Byte "Slot" 9
+					String "id" "minecraft:iron_ingot"
+					Byte "Count" 8
+					End
+					Byte "Slot" 10
+					String "id" "minecraft:gold_ingot"
+					Byte "Count" 6
+					End
+					Byte "Slot" 11
+					String "id" "minecraft:white_wool"
+					Byte "Count" 20
+					End
+					Byte "Slot" 12
+					String "id" "minecraft:oak_planks"
+					Byte "Count" 24
+					End
+					Byte "Slot" 13
+					String "id" "minecraft:arrow"
+					Byte "Count" 20
+					End
+					Byte "Slot" 14
+					String "id" "minecraft:apple"
+					Byte "Count" 24
+					End
+					Byte "Slot" 15
+					String "id" "minecraft:cooked_beef"
+					Byte "Count" 9
+					End
+					Byte "Slot" 16
+					String "id" "minecraft:cooked_porkchop"
+					Byte "Count" 62
+					End
+					Byte "Slot" 17
+					String "id" "minecraft:cooked_mutton"
+					Byte "Count" 16
+					End
+					Byte "Slot" 18
+					String "id" "minecraft:iron_sword"
+					Byte "Count" 1
+					Compound "tag"
+						Int "Damage" 0
+						End
+					End
+					Byte "Slot" 19
+					String "id" "minecraft:cherry_log"
+					Byte "Count" 4
+					End
+					Byte "Slot" 22
+					String "id" "minecraft:coal"
+					Byte "Count" 2
+					End
+					Byte "Slot" 23
+					String "id" "minecraft:string"
+					Byte "Count" 4
+					End
+					Byte "Slot" 24
+					String "id" "minecraft:dark_oak_log"
+					Byte "Count" 5
+					End
+					Byte "Slot" 25
+					String "id" "minecraft:diamond"
+					Byte "Count" 4
+					End
+					Byte "Slot" 26
+					String "id" "minecraft:golden_carrot"
+					Byte "Count" 8
+					End
+					Byte "Slot" 27
+					String "id" "minecraft:iron_axe"
+					Byte "Count" 1
+					Compound "tag"
+						Int "Damage" 0
+						End
+					End
+					Byte "Slot" 28
+					String "id" "minecraft:potato"
+					Byte "Count" 57
+					End
+					Byte "Slot" 29
+					String "id" "minecraft:emerald"
+					Byte "Count" 29
+					End
+					Byte "Slot" 30
+					String "id" "minecraft:carrot"
+					Byte "Count" 5
+					End
+					Byte "Slot" 34
+					String "id" "minecraft:shield"
+					Byte "Count" 1
+					Compound "tag"
+						Int "Damage" 0
+						End
+					End
+					Byte "Slot" 35
+					String "id" "minecraft:shield"
+					Byte "Count" 1
+					Compound "tag"
+						Int "Damage" 0
+						End
+					End
+					Byte "Slot" 100
+					String "id" "minecraft:iron_boots"
+					Byte "Count" 1
+					Compound "tag"
+						Int "Damage" 3
+						End
+					End
+					Byte "Slot" 101
+					String "id" "minecraft:iron_leggings"
+					Byte "Count" 1
+					Compound "tag"
+						Int "Damage" 0
+						End
+					End
+					Byte "Slot" 102
+					String "id" "minecraft:iron_chestplate"
+					Byte "Count" 1
+					Compound "tag"
+						Int "Damage" 0
+						End
+					End
+					Byte "Slot" 103
+					String "id" "minecraft:iron_helmet"
+					Byte "Count" 1
+					Compound "tag"
+						Int "Damage" 0
+						End
+					End
+					Byte "Slot" -106
+					String "id" "minecraft:shield"
+					Byte "Count" 1
+					Compound "tag"
+						Int "Damage" 181
+						End
+					End
+			Int "foodTickTimer" 0
+			End
+		Int "SpawnY" 79
+		Int "rainTime" 65644
+		Int "thunderTime" 30054
+		Int "SpawnZ" -112
+		Byte "hardcore" 1
+		IntArray "WanderingTraderId" 4
+			-354780676
+			-1944696161
+			-1088234485
+			1427932253
+		Byte "DifficultyLocked" 0
+		Int "SpawnX" -224
+		Int "clearWeatherTime" 0
+		Byte "thundering" 0
+		Float "SpawnAngle" 0
+		Int "version" 19133
+		Double "BorderSafeZone" 5
+		Long "LastPlayed" 1691733777935
+		Double "BorderWarningTime" 15
+		List "ScheduledEvents" End 0
+		String "LevelName" "adv"
+		Double "BorderSize" 59999968
+		Int "DataVersion" 3569
+		Compound "DataPacks"
+			List "Disabled" String 2
+				"bundle"
+				"trade_rebalance"
+			List "Enabled" String 1
+				"vanilla"
+			End
+		End
+	End
+End
