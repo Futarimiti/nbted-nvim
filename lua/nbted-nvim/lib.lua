@@ -16,11 +16,14 @@ local err = function (msg)
     error('[nbted-nvim] ' .. msg)
 end
 
---- Infer Minecraft data directory by OS.
+--- Infer Minecraft data directory by OS
+--- and return their normalised filepath.
 --- https://help.minecraft.net/hc/en-us/articles/4409159214605-Managing-Data-and-Game-Storage-in-Minecraft-Java-Edition-#h_01FGA90Z06DE00GT8E81SWX9SE
+--- @param opts opt
 --- @param os_ string
 --- @return filepath
-local infer_minecraft_dir_by_os = function (os_)
+local infer_minecraft_dir_by_os = function (opts, os_)
+    log(opts) (string.format('inferring Minecraft data directory with your OS: %s...', os_))
     if os_ == 'Linux' then return os.getenv('HOME') .. '/.minecraft/'
     elseif os_ == 'OSX' then return os.getenv('HOME') .. '/Library/Application Support/minecraft/'
     elseif os_ == 'Windows' then return os.getenv('APPDATA') .. '/.minecraft/'
@@ -32,7 +35,7 @@ end
 --- @see infer_minecraft_dir_by_os
 --- @return filepath
 local infer_minecraft_dir = function (opts)
-    local inferred = infer_minecraft_dir_by_os(jit.os)
+    local inferred = infer_minecraft_dir_by_os(opts, jit.os)
     if opts.verbose then
         log(opts)(string.format('inferred Minecraft data directory: %s', inferred))
     end
@@ -45,31 +48,10 @@ end
 --- @return filepath
 local get_minecraft_dir = function (opts)
     if opts.minecraft_dir == 'infer' then
-        if opts.verbose then log(opts) 'inferring Minecraft data directory with your OS...' end
         return infer_minecraft_dir(opts)
     else
         return opts.minecraft_dir
     end
-end
-
---- Determine if str1 is prefix of str2.
---- Pattern matche allowed.
---- @param str1 string
---- @param str2 string
---- @return boolean
-local is_prefix = function (str1, str2)
-    local a, _ = string.find(str2, str1)
-    return a == 1
-end
-
---- Determine if str1 is suffix of str2.
---- Pattern match allowed.
---- @param str1 string
---- @param str2 string
---- @return boolean
-local is_suffix = function (str1, str2)
-    local _, e = string.find(str2, str1)
-    return e == #str2
 end
 
 --- Determine if a file is in Minecraft file directory.
@@ -77,9 +59,18 @@ end
 --- @return boolean
 local in_minecraft_dir = function (opts, f)
     local minecraft_dir = get_minecraft_dir(opts)
-    return is_prefix(minecraft_dir, f)
+    for dir in vim.fs.parents(f) do
+        local normalised_dir = vim.fs.normalize(dir)
+        if normalised_dir == minecraft_dir or normalised_dir .. '/' == minecraft_dir then 
+            log(opts) ('this file is in the Minecraft data directory.')
+            return true 
+        end
+    end
+
+    return false
 end
 
+--- Patterns of standard NBT filenames.
 --- https://minecraft.fandom.com/wiki/NBT_format#Uses
 --- @type filepath[]
 local dats = { 'level.dat'
@@ -97,8 +88,10 @@ local dats = { 'level.dat'
 --- @param f filepath
 --- @return boolean
 local is_standard_data_file = function (opts, f)
+    local basename = vim.fs.basename(f)
     for _, dat in pairs(dats) do
-        if dat == f or is_suffix('/' .. dat, f) then 
+        local s, e = string.find(basename, dat)
+        if s == 1 and e == #basename then 
             if opts.verbose then log(opts) ('NBT detected: filename matches the standard NBT file `' .. dat .. '`.') end
             return true 
         end
@@ -107,11 +100,25 @@ local is_standard_data_file = function (opts, f)
     return false
 end
 
+--- Determine if a file has a certain file extension.
+--- @param ext filepath
+--- @param f filepath
+--- @return boolean
+local has_extension = function (ext, f)
+    local pat = '.*%.' .. ext
+    local _, e = string.find(f, pat)
+    return e == #f
+end
+
 --- Determine if a file is a data file.
 --- @param f filepath
 --- @return boolean
-local is_data_file = function (f)
-    return is_suffix('.dat', f)
+local is_data_file = function (opts, f)
+    if has_extension('dat', f) then
+        log(opts)('this is a data file.')
+        return true
+    end
+    return false
 end
 
 --- Determine if a file is a data file inside the Minecraft directory.
@@ -119,9 +126,9 @@ end
 --- @param f filepath
 --- @return boolean
 local is_a_dat_file_in_minecraft_dir = function (opts, f)
-    local yes = is_data_file(f) and in_minecraft_dir(opts, f)
+    local yes = is_data_file(opts, f) and in_minecraft_dir(opts, f)
     if yes and opts.verbose then
-        log(opts) 'NBT detected. Reason: .dat file inside Minecraft data directory.'
+        log(opts) 'NBT detected. Reason: data file inside Minecraft data directory.'
     end
     return yes
 end
@@ -133,7 +140,8 @@ end
 --- @return boolean
 --- @see is_std_data_file
 --- @see in_minecraft_dir
-M.detect_nbt = function (opts, f)
+local detect_nbt = function (opts, f)
+    log(opts)(string.format('file: %s', f))
     return is_standard_data_file(opts, f) or is_a_dat_file_in_minecraft_dir(opts, f) 
 end
 
@@ -266,12 +274,13 @@ end
 --- passing a function to `opts.detect_nbt`.
 --- @param opts opt
 --- @param m table
+--- FIXME still bugged at detecting
 local setup_auto_detect_au = function (opts, m)
-    local callback = function (args)
-        local filename = args.file
+    local callback = function (_)
+        local filename = curr_file()
         local is_nbt = (function ()
             if opts.detect_nbt == 'auto' then
-                return require('nbted-nvim.lib').detect_nbt(opts, filename)
+                return detect_nbt(opts, filename)
             else
                 return opts.detect_nbt(filename)
             end
