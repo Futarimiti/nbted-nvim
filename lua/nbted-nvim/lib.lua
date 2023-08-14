@@ -1,5 +1,3 @@
-local M = {}
-
 --- @param opts opt
 local log = function (opts)
     --- @param msg string
@@ -141,7 +139,6 @@ end
 --- @see is_std_data_file
 --- @see in_minecraft_dir
 local detect_nbt = function (opts, f)
-    log(opts)(string.format('file: %s', f))
     return is_standard_data_file(opts, f) or is_a_dat_file_in_minecraft_dir(opts, f) 
 end
 
@@ -315,6 +312,8 @@ local setup_auto_encode_au = function (_, m, buf)
 end
 
 -- exporting
+
+local M = {}
 
 M.decode = decode
 M.encode = encode
