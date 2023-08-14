@@ -27,7 +27,7 @@ local infer_minecraft_dir_by_os = function (opts, os_)
     if os_ == 'Linux' then return os.getenv('HOME') .. '/.minecraft/'
     elseif os_ == 'OSX' then return os.getenv('HOME') .. '/Library/Application Support/minecraft/'
     elseif os_ == 'Windows' then return os.getenv('APPDATA') .. '/.minecraft/'
-    else return err(string.format('your operating system %s does not match Linux, OSX or Windows, therefore I cannot infer your minecraft directory.', os_))
+    else return err(string.format('your OS (%s) is not one of Linux, OSX or Windows, Minecraft data directory cannot be inferred. Please provide one manually.', os_))
     end
 end
 
@@ -62,7 +62,7 @@ local in_minecraft_dir = function (opts, f)
     for dir in vim.fs.parents(f) do
         local normalised_dir = vim.fs.normalize(dir)
         if normalised_dir == minecraft_dir or normalised_dir .. '/' == minecraft_dir then 
-            log(opts) ('this file is in the Minecraft data directory.')
+            log(opts) ('this file is inside the Minecraft data directory.')
             return true 
         end
     end
@@ -92,7 +92,7 @@ local is_standard_data_file = function (opts, f)
     for _, dat in pairs(dats) do
         local s, e = string.find(basename, dat)
         if s == 1 and e == #basename then 
-            if opts.verbose then log(opts) ('NBT detected: filename matches the standard NBT file `' .. dat .. '`.') end
+            if opts.verbose then log(opts) ('NBT detected: filename matches standard NBT file `' .. dat .. '`.') end
             return true 
         end
     end
@@ -128,7 +128,7 @@ end
 local is_a_dat_file_in_minecraft_dir = function (opts, f)
     local yes = is_data_file(opts, f) and in_minecraft_dir(opts, f)
     if yes and opts.verbose then
-        log(opts) 'NBT detected. Reason: data file inside Minecraft data directory.'
+        log(opts) 'NBT detected: data file inside Minecraft data directory.'
     end
     return yes
 end
@@ -211,7 +211,7 @@ local encode = function (opts, dest)
     h:close()
     destfile:flush()
     destfile:close()
-    if opts.verbose then log(opts)('encoded current buffer to ' .. dest) end
+    if opts.verbose then log(opts)('encoded to ' .. dest) end
 end
 
 --- Try to read and decode the current file into human-readable text,
@@ -237,7 +237,7 @@ local decode = function (opts)
     vim.cmd.setfiletype 'nbted'
     local bufnr = vim.fn.bufnr '%'
 
-    if opts.verbose then log(opts)('decoded current buffer to ' .. tempname) end
+    if opts.verbose then log(opts)('decoded to ' .. tempname) end
 
     return thisfile, bufnr
 end
